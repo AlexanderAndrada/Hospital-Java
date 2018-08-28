@@ -47,29 +47,4 @@ public class Sector extends AMetodos
             }  
         return resultado;
     }
-    public  void eliminarMetodoPropio(JTable Tabla,String tabla)
-    {
-        try
-        {
-        String pk=Tabla.getColumnName(0);
-        String pk_dato= (String)Tabla.getModel().getValueAt(Tabla.getSelectedRow(), 0);
-        String sql="delete from "+tabla;
-        String where=" where "+pk+" LIKE "+"'"+pk_dato+"'";
-        System.out.println("LA CONSULTA ES: "+sql+where);
-          this.conectar();
-          PreparedStatement consulta= this.conexion.prepareStatement(sql+where);       
-          consulta.executeUpdate();
-          JOptionPane.showMessageDialog(null,"Eliminado correctamente");
-        }
-        catch(Exception e)
-        {JOptionPane.showMessageDialog(null,"Debe seleccionar una fila a eliminar");}             
-        finally
-            {
-            try {
-                this.cerrar();
-            } catch (Exception ex) {
-                Logger.getLogger(AMetodos.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            }  
-    }
 }

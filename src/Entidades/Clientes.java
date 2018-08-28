@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class Clientes extends AMetodos
@@ -14,15 +15,9 @@ public class Clientes extends AMetodos
         
     }
     
-    public void modificar() 
-    {
-       System.out.println();
-    }
 
-    //@Override
-    public String agregar(int dni,String nombre,String apellido, String localidad, int edad, String fnac, String sexo) throws Exception 
+    public void agregar(int dni,String nombre,String apellido, String localidad, int edad, String fnac, String sexo) throws Exception 
     {
-        String resultado=" ";
         try
         {
           this.conectar();
@@ -37,17 +32,15 @@ public class Clientes extends AMetodos
           consulta.setString(6,fnac );
           consulta.setString(7, sexo);
           consulta.executeUpdate();
-          resultado="Cliente ingreso exitosamente";
+          JOptionPane.showMessageDialog(null, "Cliente ingreso exitosamente");
         }
         catch(Exception e)
         {
-            System.out.println(e);
-            resultado="Hubo un error en el ingreso del cliente";
+            JOptionPane.showMessageDialog(null, "Hubo un error en el ingreso del cliente");
         }
         finally
             {
                 this.cerrar();
-            }  
-        return resultado;
+            }       
     }   
 }

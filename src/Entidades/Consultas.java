@@ -60,7 +60,6 @@ public class Consultas extends AMetodos
         catch(Exception e)
         {
             System.out.println(e);
-           // resultado="Hubo un error en el ingreso del cliente";
         }
         finally
             {

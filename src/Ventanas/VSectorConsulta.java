@@ -128,7 +128,7 @@ public class VSectorConsulta extends javax.swing.JFrame {
     }//GEN-LAST:event_JBModificarActionPerformed
 
     private void JBEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBEliminarActionPerformed
-        s.eliminarMetodoPropio(Tabla,s.getClass().getSimpleName());
+        s.eliminar(Tabla,s.getClass().getSimpleName());
         this.JTFValorCambiar.setText("");
         Tabla.setModel(s.consultar("especialidad","Todos"));
     }//GEN-LAST:event_JBEliminarActionPerformed

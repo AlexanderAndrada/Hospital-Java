@@ -126,7 +126,9 @@ public class VEspecialidadConsulta extends javax.swing.JFrame {
     }//GEN-LAST:event_JBModificarActionPerformed
 
     private void JBEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBEliminarActionPerformed
-        e.eliminarMetodoPropio(Tabla,e.getClass().getSimpleName()); 
+        e.eliminar(Tabla,e.getClass().getSimpleName());
+        this.JTFValorCambiar.setText("");
+        Tabla.setModel(e.consultar("especialidad","Todos"));
     }//GEN-LAST:event_JBEliminarActionPerformed
 
     private void JBEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBEliminarMouseClicked
